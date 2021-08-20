@@ -1,5 +1,7 @@
 # web2python_ind
 
+쓰는 이유: HTML과 CSS만 사용하여 웹 브라우저를 만들다가 python을 사용하면 브라우저의 용량을 줄일 수 있다나 뭐라나...
+
 ```
 #!C:\Users\user\anaconda3\python.exe
 print("content-type:text/html; charset=UTF-8") #웹서버에게 text/html을 처리해달라고 명령
