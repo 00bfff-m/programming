@@ -54,23 +54,32 @@ for item in files: #각 file마다 아래와 같은 format으로 된 변수(글�
     listStr = listStr + '<li><a href="index.py?id={name}">{name}</a></li>'.format(name=item) 
 ```
 
+
+## 조건문을 사용하여 query string에 반응 및, 글의 수정, 삭제 기능 추가
+
 ```
-form = cgi.FieldStorage() #index.py?id를 받는 역할
-if "id" in form: #만약 query string이 없으면 'welcome, Hello web', 있으면 query string, 그에 맞는 description 출력
-    pageId = form["id"].value
+#index.py?id를 받는 역할
+form = cgi.FieldStorage()
+```
+```
+if "id" in form: 
+    pageId = form["id"].value #만약 query string이 있으면 query string과 그에 맞는 description 출력
     description = open('data/'+pageId, 'r',encoding='UTF-8').read()
     update_link = '<a href="update.py?id={}">update</a>'.format(pageId) #만약 query string이 있으면 update_link변수 생성
-    delete_action = '''
+    delete_action = ''' #만약 query string이 있으면 delete_action 변수 생성
         <form action="process_delete.py" method="post">
             <input type="hidden" name="pageId" value="{}">
             <input type="submit" value="delete">
         </form>
     '''.format(pageId)
-else:
+else: #만약 query string이 없으면 'welcome, Hello web' 출력 
     pageId = '안녕하세요'
     description = '뭐하지...'
     update_link = ''
     delete_action = ''
+```
+
+```
 print(pageId)
 print('''<!doctype html>
 <html>
