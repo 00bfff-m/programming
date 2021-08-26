@@ -2,7 +2,7 @@
 
 쓰는 이유: HTML과 CSS만 사용하여 웹 application 만들다가 python을 사용하면 더 효율적이기 때문에
 
-## preparaition  
+## preparation  
 ```
 #!C:\Users\user\anaconda3\python.exe 
 ```
@@ -29,9 +29,8 @@ print()
 
 
 **`<li></li>`**: html 태그, 목록 생성<br> 
-```
-#<li></li> 사용 예시
-'''
+ex)  
+~~~
 <ol> <!--<ol></ol>: ordered list-->
   <li>항목 1</li> 
   <li>항목 2</li>
@@ -41,7 +40,7 @@ print()
   <li>항목 1</li>
   <li>항목 2</li>
 </ul>
-'''
+~~~
 
 **`<a></a>`**: 하이퍼링크 삽입, ex) `<a href=링크 주소></a>`: 
 
@@ -53,11 +52,7 @@ listStr = '' #for loop를 사용하려면 비어 있는 자료형이 필요함
 
 for item in files: #각 file마다 아래와 같은 format으로 된 변수(글목록) 생성
     listStr = listStr + '<li><a href="index.py?id={name}">{name}</a></li>'.format(name=item) 
-
 ```
-
-```
-
 
 ```
 form = cgi.FieldStorage() #index.py?id를 받는 역할
