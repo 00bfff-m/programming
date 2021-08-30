@@ -57,7 +57,7 @@ for item in files: #각 file마다 아래와 같은 format으로 된 변수(글�
 
 ## 조건문을 사용하여 query string에 반응 및, 글의 수정, 삭제 기능 추가
 **`<form></form>`:** 사용자가 입력한 데이터를 한번에 웹으로 전송  
-ex) '<form action="form을 전송할 서버쪽 스크립트 파일" method="get(default) or post">' (get보다는 post방식이 보안에 적합)
+ex) `<form action="form을 전송할 서버쪽 스크립트 파일" method="get(default) or post">` (get보다는 post방식이 보안에 적합)
 
 ```
 #index.py?id를 받는 역할
