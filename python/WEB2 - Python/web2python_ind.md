@@ -60,9 +60,10 @@ for item in files: #각 file마다 아래와 같은 format으로 된 변수(글�
 ex) `<form action="form을 전송할 서버쪽 스크립트 파일" method="get(default) or post">` (get보다는 post방식이 보안에 적합)
 
 ```
-#index.py?id를 받는 역할
 form = cgi.FieldStorage()
 ```
+cgi.FieldStorage(): 이전에 들어온 id 데이터를 받는 역할 
+
 ```
 if "id" in form: 
     pageId = form["id"].value #만약 query string이 있으면 query string과 그에 맞는 description 출력
