@@ -17,7 +17,7 @@ else:
     pageId = 'Welcome'
     description = 'Hello, web'
 ```
-
+```
 print(pageId)
 print('''<!doctype html>
 <html>
@@ -40,3 +40,4 @@ print('''<!doctype html>
     title = pageId,
     desc = description,
     list = view.getList())) #formating을 사용하여 title pageId라는 변수로 치환
+```
