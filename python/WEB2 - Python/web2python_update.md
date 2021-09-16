@@ -43,5 +43,5 @@ print('''<!doctype html>
     desc = description,
     list = view.getList(),
     form_default_title = pageId,
-    form_default_description = description)) #formating을 사용하여 title pageId라는 변수로 치환
+    form_default_description = description)) 
 ```
