@@ -92,5 +92,11 @@ print('''<!doctype html>
   <p>{desc}</p>
 </body>
 </html>
-'''.format(title = pageId, desc = description, list = listStr, update = update_link, delete = delete_action)) #formating을 사용하여 title pageId라는 변수로 치환
+'''.format(
+    title = pageId,
+    desc = description,
+    list = view.getList(),
+    update = update_link,
+    delete = delete_action,
+    check = form))
 ```
