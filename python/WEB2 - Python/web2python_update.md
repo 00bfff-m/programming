@@ -1,3 +1,5 @@
+# 글 수정 기능 구현하기
+
 ```
 #!C:\Users\user\anaconda3\python.exe
 print("content-type:text/html; charset=UTF-8\n") #웹서버에게 text/html을 처리해달라고 명령
@@ -28,10 +30,10 @@ print('''<!doctype html>
   <h1><a href="index.py">WEB</a></h1>
   <ol>{list}</ol>
   <a href="create.py">create</a></h1>
-  <form action="process_update.py" method="post"> <!--<form></form>: URL query string을 만들어 주는 역할-->
+  <form action="process_update.py" method="post"> <!--입력한 form을 process_update.py로 보내주는 역할-->
       <input type="hidden" name="pageId" value="{form_default_title}"> <!--title을 바꿔도 error가 생기지 않게끔 해주는 역할-->
       <p><input type="text" placeholder="title" name="title" value="{form_default_title}"></p>  <!--<p></p>: 줄바꿈-->
-      <p><textarea rows="4" placeholder="description" name="description" value="{form_default_description}"></textarea></p> <!--<textarea rows="number"></textarea>: 여러 줄을 입력할 수 있는 UI 생성-->
+      <p><textarea rows="4" placeholder="description" name="description">{form_default_description}</textarea></p> <!--<textarea rows="number"></textarea>: 여러 줄을 입력할 수 있는 UI 생성-->
       <p><input type="submit"></p>
   </form>
 </body>
