@@ -20,6 +20,7 @@ print("content-type:text/html; charset=UTF-8")
 
 ```
 #필요한 모듈 불러오기  
+#view: 글목록을 생성해주는 모듈, view.md 참고
 import codecs, sys, cgi, os, view, html_sanitizer
 ```
 
@@ -45,22 +46,10 @@ ex)
 </ul>
 ~~~
 
-**`<a></a>`**: 하이퍼링크 삽입, ex) `<a href=링크 주소></a>`: 
-
-```
-#data directory에 있는 file list를 file이라는 변수로 지정
-files = os.listdir('data') 
-
-listStr = '' #for loop를 사용하려면 비어 있는 자료형이 필요함 
-
-for item in files: #각 file마다 아래와 같은 format으로 된 변수(글목록) 생성
-    listStr = listStr + '<li><a href="index.py?id={name}">{name}</a></li>'.format(name=item) 
-```
-
-
 ## 조건문을 사용하여 query string에 반응 및, 글의 수정, 삭제 기능 추가
 **`<form></form>`:** 사용자가 입력한 데이터를 한번에 웹으로 전송  
 ex) `<form action="form을 전송할 서버쪽 스크립트 파일" method="get(default) or post">` (get보다는 post방식이 보안에 적합)
+**`<a></a>`**: 하이퍼링크 삽입, ex) `<a href=링크 주소></a>`: 
 
 ```
 form = cgi.FieldStorage()
@@ -74,11 +63,11 @@ if "id" in form:
     update_link = '<a href="update.py?id={}">update</a>'.format(pageId) #만약 query string이 있으면 update_link변수 생성
     delete_action = ''' #만약 query string이 있으면 delete_action 변수 생성
         <form action="process_delete.py" method="post">
-            <input type="hidden" name="pageId" value="{}">
+            <input type="hidden" name="pageId" value="{}"> 
             <input type="submit" value="delete">
         </form>
     '''.format(pageId)
-else: #만약 query string이 없으면 'welcome, Hello web' 출력 
+else: #만약 query string이 없으면 정해둔 string 출력, update와 delete 기능은 넣지 않기
     pageId = '안녕하세요'
     description = '뭐하지...'
     update_link = ''
