@@ -6,6 +6,7 @@ print()
 import cgi, os, view
 ```
 
+```
 form = cgi.FieldStorage()
 if "id" in form: #만약 query string이 없으면 'welcome, Hello web', 있으면 query string, 그에 맞는 description 출력
     pageId = form["id"].value
@@ -13,6 +14,9 @@ if "id" in form: #만약 query string이 없으면 'welcome, Hello web', 있으�
 else:
     pageId = 'Welcome'
     description = 'Hello, web'
+```
+
+```
 print(pageId)
 print('''<!doctype html>
 <html>
@@ -38,4 +42,4 @@ print('''<!doctype html>
     list = view.getList(),
     form_default_title = pageId,
     form_default_description = description)) #formating을 사용하여 title pageId라는 변수로 치환
-
+```
