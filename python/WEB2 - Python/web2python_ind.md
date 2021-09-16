@@ -1,6 +1,11 @@
 # web2python_ind
 
-쓰는 이유: HTML과 CSS만 사용하여 웹 application 만들다가 python을 사용하면 더 효율적이기 때문에
+쓰는 이유: HTML과 CSS만 사용하여 웹 application 만들다가 python을 사용하면 더 효율적이기 때문에  
+**query string:** 사용자가 입력 데이터를 전달하는 방법중의 하나로, url 주소에 미리 협의된 데이터를 파라미터를 통해 넘기는 것을 말한다. ex) index.py?key1=value1&key2=value2...  
+**CGI(Common Gateway Interface):** 웹서버(e.g. apache)와 CGI application(e.g. 지금 사용하는 index.py) 사이에 서로 상호작용을 할 수 있게 해주는 표준화된 약속  
+**API(Application Programming Interface):** 애플리케이션을 구현하기 위해서 시간 순서대로 배치해야 할 기능들 ex) print, listdir 등은 python에 내장되어 있는 API  
+**application:** 기존의 기능을 응용하여 새로운 기능을 만드는 것(= program: 시간의 순서에 따라 일어나는 일들)  
+파이썬의 부품은 함수들(function), 결합 방법은 문법(syntax)  
 
 ## preparation  
 ```
@@ -15,7 +20,7 @@ print("content-type:text/html; charset=UTF-8")
 
 ```
 #필요한 모듈 불러오기  
-import codecs, sys, cgi, os 
+import codecs, sys, cgi, os, view, html_sanitizer
 ```
 
 ```
@@ -25,8 +30,6 @@ print()
 -> 웹 application을 수정하거나 만들 때 한글로 텍스트를 입력하게 해주는 역할  
 
 ## for loop를 사용하여 query string으로 된 글목록 생성  
-**query string:** 사용자가 입력 데이터를 전달하는 방법중의 하나로, url 주소에 미리 협의된 데이터를 파라미터를 통해 넘기는 것을 말한다. ex) index.py?key1=value1&key2=value2... 
-
 
 **`<li></li>`**: html 태그, 목록 생성<br> 
 ex)  
